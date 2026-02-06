@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: Cloud Admin Dashboard API
+  version: 0.1.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/auth/login:
+    post:
+      summary: Authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Authenticated
+  /api/metrics/kpis:
+    get:
+      summary: Fetch KPI metrics
+      responses:
+        '200':
+          description: KPI map

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: cloud-admin-dashboard-backend
+  cache:
+    type: simple
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
